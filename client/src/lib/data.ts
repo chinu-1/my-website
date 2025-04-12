@@ -1,76 +1,51 @@
 // Education data
 export const educationData = [
   {
-    degree: "B.Tech in Computer Science",
-    institution: "Indian Institute of Technology",
-    period: "2019 - 2023",
-    description: "Pursued a comprehensive program in Computer Science with focus on algorithms, data structures, and software development. Maintained a GPA of 3.8/4.0 throughout the program."
+    degree: "B.Tech in Electronics and Communication Engineering",
+    institution: "Mizoram University",
+    period: "2021 - 2025",
+    description: "Pursuing a comprehensive program in Electronics and Communication Engineering with focus on signal processing, communication systems, and electronic circuit design. Maintaining a strong academic record throughout the program."
   },
   {
     degree: "Higher Secondary Education",
-    institution: "Delhi Public School",
-    period: "2017 - 2019",
-    description: "Completed higher secondary education with specialization in Science and Mathematics. Graduated with distinction and ranked in the top 5% of students nationwide."
+    institution: "CBSE Board",
+    period: "2019 - 2021",
+    description: "Completed higher secondary education with specialization in Science and Mathematics. Graduated with distinction and developed a strong foundation in physics, mathematics, and basic electronics."
   }
 ];
 
 // Experience data
 export const experienceData = [
   {
-    position: "Software Developer Intern",
-    company: "Tech Innovations Inc.",
-    period: "May 2022 - Aug 2022",
-    description: "Worked on developing and maintaining web applications using React and Node.js. Collaborated with a team of developers to implement new features and resolve bugs.",
-    skills: ["React", "Node.js", "MongoDB"]
-  },
-  {
-    position: "Research Assistant",
-    company: "University Research Lab",
-    period: "Jan 2022 - Apr 2022",
-    description: "Assisted in research on machine learning algorithms for natural language processing. Implemented models using Python and TensorFlow, and contributed to a research paper.",
-    skills: ["Python", "TensorFlow", "NLP"]
+    position: "Hackathon Participant",
+    company: "Yuvamanthan Hackathon 2025",
+    period: "March 2025",
+    description: "Developed 'Digishield - Securing Digital India', a cybersecurity and governance project aimed at improving the cybersecurity for government websites. Implemented innovative security protocols and monitoring systems to protect against cyber threats.",
+    skills: ["Cybersecurity", "Web Security", "Digital Governance"]
   }
 ];
 
 // Skills data
 export const programmingSkills = [
-  { name: "JavaScript", proficiency: 90 },
+  { name: "C/C++", proficiency: 90 },
   { name: "Python", proficiency: 85 },
-  { name: "Java", proficiency: 75 },
-  { name: "C/C++", proficiency: 70 }
+  { name: "MATLAB", proficiency: 80 },
+  { name: "JavaScript", proficiency: 75 }
 ];
 
 export const frameworkSkills = [
-  { name: "React", proficiency: 88 },
-  { name: "Node.js", proficiency: 82 },
-  { name: "Django", proficiency: 75 },
-  { name: "TensorFlow", proficiency: 65 }
+  { name: "Arduino", proficiency: 88 },
+  { name: "Raspberry Pi", proficiency: 85 },
+  { name: "TensorFlow", proficiency: 70 },
+  { name: "React", proficiency: 65 }
 ];
 
 // Project data
 export const projectsData = [
   {
-    title: "E-commerce Platform",
-    description: "A full-stack e-commerce platform with user authentication, product catalog, cart functionality, and payment integration.",
-    technologies: ["React", "Node.js", "MongoDB"],
-    links: {
-      github: "#",
-      demo: "#"
-    }
-  },
-  {
-    title: "ML Text Classifier",
-    description: "A machine learning model that classifies text into predefined categories with high accuracy. Includes a web interface for testing.",
-    technologies: ["Python", "TensorFlow", "Flask"],
-    links: {
-      github: "#",
-      demo: "#"
-    }
-  },
-  {
-    title: "Fitness Tracking App",
-    description: "A mobile app for tracking workouts, nutrition, and fitness progress with data visualization and personalized recommendations.",
-    technologies: ["React Native", "Firebase", "Redux"],
+    title: "Digishield - Securing Digital India",
+    description: "A cybersecurity and governance project aimed at improving the security of government websites. This comprehensive solution includes vulnerability scanning, real-time threat detection, and secure authentication protocols to protect against cyber threats.",
+    technologies: ["Cybersecurity", "Web Security", "Digital Governance", "Secure Authentication"],
     links: {
       github: "#",
       demo: "#"
@@ -84,13 +59,13 @@ export const personalInfo = {
   email: "chinmoya@example.com",
   phone: "+91 98765 43210",
   location: "Mumbai, India",
-  degree: "B.Tech in Computer Science",
+  degree: "B.Tech in Electronics and Communication Engineering",
   interests: [
-    "Web Development",
-    "Machine Learning",
-    "UI/UX Design",
-    "Mobile Apps",
-    "Cloud Computing"
+    "Electronics Design",
+    "Signal Processing",
+    "Communication Systems",
+    "IoT Solutions",
+    "Embedded Systems"
   ],
   socialLinks: {
     linkedin: "#",
