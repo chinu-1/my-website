@@ -8,15 +8,15 @@ interface HeaderProps {
 
 const Header = ({ activeSection, scrollToSection }: HeaderProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [headerClass, setHeaderClass] = useState("bg-white bg-opacity-95");
+  const [headerClass, setHeaderClass] = useState("bg-background");
 
   // Handle scroll event to add shadow when scrolled
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
-        setHeaderClass("bg-white bg-opacity-95 shadow-sm");
+        setHeaderClass("bg-background bg-opacity-95 shadow-md backdrop-blur-sm");
       } else {
-        setHeaderClass("bg-white bg-opacity-95");
+        setHeaderClass("bg-background");
       }
     };
 
@@ -52,7 +52,7 @@ const Header = ({ activeSection, scrollToSection }: HeaderProps) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             href="#home"
-            className="text-2xl font-bold font-poppins text-primary"
+            className="text-2xl font-bold font-raleway text-text"
             onClick={(e) => {
               e.preventDefault();
               handleNavClick("home");
@@ -65,7 +65,7 @@ const Header = ({ activeSection, scrollToSection }: HeaderProps) => {
           <div className="md:hidden">
             <button 
               onClick={toggleMobileMenu} 
-              className="text-primary focus:outline-none"
+              className="text-text focus:outline-none"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -104,10 +104,10 @@ const Header = ({ activeSection, scrollToSection }: HeaderProps) => {
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className={`font-poppins font-medium transition duration-300 ${
+                className={`font-raleway font-medium transition duration-300 ${
                   activeSection === item.id 
                     ? "text-accent" 
-                    : "text-primary hover:text-accent"
+                    : "text-text hover:text-secondary"
                 }`}
                 onClick={(e) => {
                   e.preventDefault();
@@ -121,29 +121,35 @@ const Header = ({ activeSection, scrollToSection }: HeaderProps) => {
         </div>
         
         {/* Mobile Navigation */}
-        <nav
-          className={`${
-            mobileMenuOpen ? "flex" : "hidden"
-          } flex-col items-center space-y-4 py-4 md:hidden`}
+        <motion.nav
+          initial={false}
+          animate={{ height: mobileMenuOpen ? "auto" : 0, opacity: mobileMenuOpen ? 1 : 0 }}
+          transition={{ duration: 0.3 }}
+          className={`overflow-hidden md:hidden`}
         >
-          {navItems.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className={`font-poppins font-medium w-full text-center py-2 transition duration-300 ${
-                activeSection === item.id 
-                  ? "text-accent" 
-                  : "text-primary hover:text-accent"
-              }`}
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick(item.id);
-              }}
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
+          <div className="flex flex-col items-center space-y-4 py-4">
+            {navItems.map((item) => (
+              <motion.a
+                key={item.id}
+                href={`#${item.id}`}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: mobileMenuOpen ? 1 : 0, y: mobileMenuOpen ? 0 : 10 }}
+                transition={{ duration: 0.3 }}
+                className={`font-raleway font-medium w-full text-center py-2 transition duration-300 ${
+                  activeSection === item.id 
+                    ? "text-accent" 
+                    : "text-text hover:text-secondary"
+                }`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick(item.id);
+                }}
+              >
+                {item.label}
+              </motion.a>
+            ))}
+          </div>
+        </motion.nav>
       </div>
     </header>
   );

@@ -1,13 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    
+    --card: 222 47% 15%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 222 47% 13%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 223 28% 15%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 194 80% 56%;
+    --secondary-foreground: 222 47% 11%;
+    
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 142 77% 46%;
+    --accent-foreground: 222 47% 11%;
+    
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 142 77% 46%;
+    
+    --radius: 0.75rem;
+  }
+  
   * {
     @apply border-border;
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-montserrat antialiased bg-background text-text;
+  }
+  
+  /* Smooth scrolling for the entire page */
+  html {
+    scroll-behavior: smooth;
   }
 }

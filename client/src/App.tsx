@@ -44,7 +44,7 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="font-opensans text-text bg-background">
+      <div className="text-text bg-background">
         <Header activeSection={activeSection} scrollToSection={scrollToSection} />
         <main>
           <HeroSection scrollToSection={scrollToSection} />

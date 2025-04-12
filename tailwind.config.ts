@@ -4,6 +4,11 @@ export default {
   darkMode: ["class"],
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    fontFamily: {
+      'sans': ['Inter', 'system-ui', 'sans-serif'],
+      'montserrat': ['Montserrat', 'sans-serif'],
+      'raleway': ['Raleway', 'sans-serif'],
+    },
     extend: {
       borderRadius: {
         lg: "var(--radius)",
@@ -13,6 +18,7 @@ export default {
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        text: "#e2e8f0", // Light text for dark theme
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
