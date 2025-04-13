@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,35 +6,35 @@
 
 @layer base {
   :root {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
     
-    --card: 222 47% 15%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 98%;
+    --card-foreground: 222 47% 11%;
     
-    --popover: 222 47% 13%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
     
-    --primary: 223 28% 15%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 160 84% 39%;
+    --primary-foreground: 0 0% 100%;
     
-    --secondary: 194 80% 56%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 0 0% 100%;
     
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
     
-    --accent: 142 77% 46%;
-    --accent-foreground: 222 47% 11%;
+    --accent: 172 66% 50%;
+    --accent-foreground: 210 40% 98%;
     
-    --destructive: 0 62% 50%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     
-    --border: 217 33% 20%;
-    --input: 217 33% 20%;
-    --ring: 142 77% 46%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 160 84% 39%;
     
-    --radius: 0.75rem;
+    --radius: 0.375rem;
   }
   
   * {
@@ -42,11 +42,40 @@
   }
 
   body {
-    @apply font-montserrat antialiased bg-background text-text;
+    @apply antialiased bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Serif Display', serif;
   }
   
   /* Smooth scrolling for the entire page */
   html {
     scroll-behavior: smooth;
+  }
+  
+  /* Animate on scroll */
+  .animate-on-scroll {
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  }
+  
+  .animate-on-scroll.is-visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .animate-on-scroll.is-hidden {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  
+  /* Button styles */
+  .btn-primary {
+    @apply bg-primary text-white py-3 px-6 rounded-md inline-flex items-center transition-all duration-300 hover:bg-primary/90 hover:translate-y-[-2px] hover:shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply bg-white border border-primary text-primary py-3 px-6 rounded-md inline-flex items-center transition-all duration-300 hover:bg-primary/5 hover:translate-y-[-2px] hover:shadow-sm;
   }
 }

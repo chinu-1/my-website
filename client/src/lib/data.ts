@@ -34,10 +34,10 @@ export const programmingSkills = [
 ];
 
 export const frameworkSkills = [
+  { name: "Flutter", proficiency: 90 },
   { name: "Arduino", proficiency: 88 },
   { name: "Raspberry Pi", proficiency: 85 },
-  { name: "TensorFlow", proficiency: 70 },
-  { name: "React", proficiency: 65 }
+  { name: "React", proficiency: 80 }
 ];
 
 // Project data
@@ -56,21 +56,19 @@ export const projectsData = [
 // Personal info
 export const personalInfo = {
   name: "Chinmoya Padhi",
-  email: "chinmoya@example.com",
+  email: "chinmoyapadhi01@outlook.com",
   phone: "+91 98765 43210",
-  location: "Mumbai, India",
+  location: "Bhubaneswar, India",
   degree: "B.Tech in Electronics and Communication Engineering",
   interests: [
-    "Electronics Design",
-    "Signal Processing",
-    "Communication Systems",
-    "IoT Solutions",
-    "Embedded Systems"
+    "Android Development",
+    "Web Development",
+    "Flutter Development"
   ],
   socialLinks: {
     linkedin: "#",
     github: "#",
     twitter: "#",
-    medium: "#"
+    instagram: "#"
   }
 };

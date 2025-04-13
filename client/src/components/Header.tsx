@@ -8,15 +8,15 @@ interface HeaderProps {
 
 const Header = ({ activeSection, scrollToSection }: HeaderProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [headerClass, setHeaderClass] = useState("bg-background");
+  const [headerClass, setHeaderClass] = useState("bg-transparent");
 
   // Handle scroll event to add shadow when scrolled
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setHeaderClass("bg-background bg-opacity-95 shadow-md backdrop-blur-sm");
+      if (window.scrollY > 20) {
+        setHeaderClass("bg-white shadow-sm");
       } else {
-        setHeaderClass("bg-background");
+        setHeaderClass("bg-transparent");
       }
     };
 
@@ -45,51 +45,34 @@ const Header = ({ activeSection, scrollToSection }: HeaderProps) => {
 
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${headerClass}`}>
-      <div className="container mx-auto px-6 py-4">
+      <div className="max-w-6xl mx-auto px-6 py-5">
         <div className="flex justify-between items-center">
           <motion.a
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             href="#home"
-            className="text-2xl font-bold font-raleway text-text"
+            className="text-3xl font-medium text-primary"
             onClick={(e) => {
               e.preventDefault();
               handleNavClick("home");
             }}
           >
-            Chinmoya<span className="text-accent">.</span>
+            cp<span className="text-black">.</span>
           </motion.a>
           
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button 
               onClick={toggleMobileMenu} 
-              className="text-text focus:outline-none"
+              className="text-foreground focus:outline-none"
+              aria-label="Toggle menu"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {mobileMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
+              <div className="w-6 flex flex-col items-end space-y-1.5">
+                <span className={`block h-0.5 bg-foreground transition-all duration-300 ${mobileMenuOpen ? 'w-6 -rotate-45 translate-y-2' : 'w-6'}`}></span>
+                <span className={`block h-0.5 bg-foreground transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : 'w-4'}`}></span>
+                <span className={`block h-0.5 bg-foreground transition-all duration-300 ${mobileMenuOpen ? 'w-6 rotate-45 -translate-y-2' : 'w-5'}`}></span>
+              </div>
             </button>
           </div>
           
@@ -104,10 +87,10 @@ const Header = ({ activeSection, scrollToSection }: HeaderProps) => {
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className={`font-raleway font-medium transition duration-300 ${
+                className={`text-sm font-medium transition-all duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 ${
                   activeSection === item.id 
-                    ? "text-accent" 
-                    : "text-text hover:text-secondary"
+                    ? "text-primary after:w-full" 
+                    : "text-foreground hover:text-primary after:w-0 hover:after:w-full"
                 }`}
                 onClick={(e) => {
                   e.preventDefault();
@@ -121,24 +104,20 @@ const Header = ({ activeSection, scrollToSection }: HeaderProps) => {
         </div>
         
         {/* Mobile Navigation */}
-        <motion.nav
-          initial={false}
-          animate={{ height: mobileMenuOpen ? "auto" : 0, opacity: mobileMenuOpen ? 1 : 0 }}
-          transition={{ duration: 0.3 }}
-          className={`overflow-hidden md:hidden`}
+        <div 
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            mobileMenuOpen ? "max-h-64 mt-4" : "max-h-0 mt-0"
+          }`}
         >
-          <div className="flex flex-col items-center space-y-4 py-4">
+          <div className="flex flex-col items-start space-y-5 py-4">
             {navItems.map((item) => (
-              <motion.a
+              <a
                 key={item.id}
                 href={`#${item.id}`}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: mobileMenuOpen ? 1 : 0, y: mobileMenuOpen ? 0 : 10 }}
-                transition={{ duration: 0.3 }}
-                className={`font-raleway font-medium w-full text-center py-2 transition duration-300 ${
+                className={`text-base font-medium transition-all duration-300 relative after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 ${
                   activeSection === item.id 
-                    ? "text-accent" 
-                    : "text-text hover:text-secondary"
+                    ? "text-primary after:w-full" 
+                    : "text-foreground hover:text-primary after:w-0 hover:after:w-full"
                 }`}
                 onClick={(e) => {
                   e.preventDefault();
@@ -146,10 +125,10 @@ const Header = ({ activeSection, scrollToSection }: HeaderProps) => {
                 }}
               >
                 {item.label}
-              </motion.a>
+              </a>
             ))}
           </div>
-        </motion.nav>
+        </div>
       </div>
     </header>
   );

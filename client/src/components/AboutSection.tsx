@@ -3,7 +3,7 @@ import { motion, useAnimation, useInView } from "framer-motion";
 
 const AboutSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.3 });
+  const isInView = useInView(ref, { once: false, amount: 0.1 });
   const controls = useAnimation();
 
   useEffect(() => {
@@ -13,137 +13,164 @@ const AboutSection = () => {
   }, [isInView, controls]);
 
   const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      y: 0,
       transition: {
-        duration: 0.6,
         staggerChildren: 0.2
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 }
+      transition: { duration: 0.6, ease: "easeOut" }
     }
   };
 
   const interests = [
-    "Electronics Design",
-    "Signal Processing",
-    "Communication Systems",
-    "IoT Solutions",
-    "Embedded Systems"
+    "Android Development",
+    "Web Development",
+    "Flutter Development"
   ];
 
   return (
-    <section id="about" ref={ref} className="py-24 bg-muted/30">
-      <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block px-3 py-1 text-sm font-medium text-secondary bg-secondary/10 rounded-full mb-3">ABOUT ME</span>
-          <h2 className="text-3xl md:text-4xl font-bold font-raleway text-text">
-            Get to Know <span className="text-accent">Me Better</span>
-          </h2>
-        </motion.div>
+    <section id="about" ref={ref} className="py-20 md:py-32 bg-white relative overflow-hidden">
+      {/* Decorative background */}
+      <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden">
+        <div className="absolute left-0 bottom-0 w-72 h-72 bg-primary/5 rounded-full -translate-x-1/2 translate-y-1/2"></div>
+        <div className="absolute right-0 top-0 w-80 h-80 bg-secondary/5 rounded-full translate-x-1/2 -translate-y-1/2"></div>
+      </div>
+      
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <span className="text-sm text-primary font-medium tracking-wider uppercase mb-2 block">About Me</span>
+            <h2 className="text-3xl md:text-4xl mb-6">Get to Know Me Better</h2>
+            <div className="w-20 h-1 bg-primary mx-auto mb-10"></div>
+          </motion.div>
+        </div>
         
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={controls}
-          className="flex flex-col md:flex-row gap-12"
-        >
-          <motion.div variants={itemVariants} className="md:w-1/2">
-            <h3 className="text-2xl font-semibold font-raleway text-text mb-6">My Story</h3>
-            <p className="text-lg text-text/80 mb-6 font-montserrat">
-              I am Chinmoya Padhi, a passionate Electronics and Communication Engineering student with a strong focus on creating efficient and innovative solutions. My journey in technology began when I first discovered electronics in high school, and since then, I've been continuously expanding my knowledge and skills.
-            </p>
-            <p className="text-lg text-text/80 mb-6 font-montserrat">
-              I believe in the power of technology to solve real-world problems and improve people's lives. My approach combines technical expertise with creative thinking to develop practical solutions in the field of electronics and communication.
-            </p>
-            <p className="text-lg text-text/80 font-montserrat">
-              Currently, I'm looking for internship opportunities where I can contribute to meaningful projects, collaborate with talented professionals, and further develop my skills in a real-world environment.
-            </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={controls}
+          >
+            <motion.div
+              variants={itemVariants}
+              className="prose prose-lg max-w-none"
+            >
+              <h3 className="font-medium text-2xl mb-6">My Story</h3>
+              <p>
+                I am Chinmoya Padhi, a passionate Electronics and Communication Engineering student with a strong focus on creating efficient and innovative solutions. My journey in technology began when I first discovered electronics in high school, and since then, I've been continuously expanding my knowledge and skills.
+              </p>
+              <p>
+                I believe in the power of technology to solve real-world problems and improve people's lives. My approach combines technical expertise with creative thinking to develop practical solutions in the field of electronics and communication.
+              </p>
+              <p>
+                Currently, I'm looking for internship opportunities where I can contribute to meaningful projects, collaborate with talented professionals, and further develop my skills in a real-world environment.
+              </p>
+            </motion.div>
           </motion.div>
           
-          <motion.div variants={itemVariants} className="md:w-1/2">
-            <h3 className="text-2xl font-semibold font-raleway text-text mb-6">Personal Info</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <div className="flex items-center p-4 bg-card rounded-lg shadow-sm">
-                <div className="bg-secondary/10 p-3 rounded-full mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-secondary" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-sm text-text/60">Full Name</p>
-                  <p className="font-medium text-text">Chinmoya Padhi</p>
-                </div>
-              </div>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={controls}
+            className="flex flex-col gap-6"
+          >
+            {/* Personal Info Section */}
+            <motion.div variants={itemVariants}>
+              <h3 className="font-medium text-2xl mb-6">Personal Info</h3>
               
-              <div className="flex items-center p-4 bg-card rounded-lg shadow-sm">
-                <div className="bg-secondary/10 p-3 rounded-full mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-secondary" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                  </svg>
+              <div className="grid gap-4">
+                <div className="flex items-center border-b border-gray-100 pb-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M20 4H4C2.89543 4 2 4.89543 2 6V18C2 19.1046 2.89543 20 4 20H20C21.1046 20 22 19.1046 22 18V6C22 4.89543 21.1046 4 20 4Z" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M16 2V6" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M8 2V6" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M2 10H22" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="text-sm text-gray-500 block">Full Name</span>
+                    <span className="font-medium">Chinmoya Padhi</span>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm text-text/60">Email</p>
-                  <p className="font-medium text-text">chinmoya@example.com</p>
+                
+                <div className="flex items-center border-b border-gray-100 pb-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M22 6L12 13L2 6" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="text-sm text-gray-500 block">Email</span>
+                    <span className="font-medium">chinmoyapadhi01@outlook.com</span>
+                  </div>
+                </div>
+                
+                <div className="flex items-center border-b border-gray-100 pb-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="text-sm text-gray-500 block">Location</span>
+                    <span className="font-medium">Bhubaneswar, India</span>
+                  </div>
+                </div>
+                
+                <div className="flex items-center pb-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M14 2V8H20" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M16 13H8" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M16 17H8" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M10 9H9H8" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="text-sm text-gray-500 block">Degree</span>
+                    <span className="font-medium">B.Tech in Electronics and Communication Engineering</span>
+                  </div>
                 </div>
               </div>
-              
-              <div className="flex items-center p-4 bg-card rounded-lg shadow-sm">
-                <div className="bg-secondary/10 p-3 rounded-full mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-secondary" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-sm text-text/60">Location</p>
-                  <p className="font-medium text-text">Mumbai, India</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center p-4 bg-card rounded-lg shadow-sm">
-                <div className="bg-secondary/10 p-3 rounded-full mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-secondary" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-sm text-text/60">Degree</p>
-                  <p className="font-medium text-text">B.Tech in Electronics and Communication Engineering</p>
-                </div>
-              </div>
-            </div>
+            </motion.div>
             
-            <h3 className="text-2xl font-semibold font-raleway text-text mb-6">My Interests</h3>
-            <div className="flex flex-wrap gap-3">
-              {interests.map((interest, index) => (
-                <motion.span
-                  key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 * index, duration: 0.4 }}
-                  className="bg-secondary bg-opacity-10 text-secondary px-4 py-2 rounded-full"
-                >
-                  {interest}
-                </motion.span>
-              ))}
-            </div>
+            {/* My Interests Section */}
+            <motion.div variants={itemVariants} className="mt-4">
+              <h3 className="font-medium text-2xl mb-6">My Interests</h3>
+              <div className="flex flex-wrap gap-3">
+                {interests.map((interest, index) => (
+                  <motion.span
+                    key={index}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 * index, duration: 0.4 }}
+                    className="bg-primary/10 text-primary px-4 py-2 rounded-md inline-block"
+                  >
+                    {interest}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
