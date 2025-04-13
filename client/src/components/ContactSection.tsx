@@ -118,21 +118,11 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-medium text-text">Email</h4>
-                  <p className="text-text/80">chinmoya@example.com</p>
+                  <p className="text-text/80">chinmoyapadhi01@outlook.com</p>
                 </div>
               </div>
               
-              <div className="flex items-start p-4 bg-card rounded-lg shadow-md">
-                <div className="bg-secondary/10 p-3 rounded-full mr-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-secondary" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="font-medium text-text">Phone</h4>
-                  <p className="text-text/80">+91 98765 43210</p>
-                </div>
-              </div>
+
               
               <div className="flex items-start p-4 bg-card rounded-lg shadow-md">
                 <div className="bg-secondary/10 p-3 rounded-full mr-4">
@@ -142,7 +132,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-medium text-text">Location</h4>
-                  <p className="text-text/80">Mumbai, India</p>
+                  <p className="text-text/80">Bhubaneswar, India</p>
                 </div>
               </div>
             </div>
