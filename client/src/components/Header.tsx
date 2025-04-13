@@ -9,14 +9,17 @@ interface HeaderProps {
 const Header = ({ activeSection, scrollToSection }: HeaderProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [headerClass, setHeaderClass] = useState("bg-transparent");
+  const [isScrolled, setIsScrolled] = useState(false);
 
   // Handle scroll event to add shadow when scrolled
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
-        setHeaderClass("bg-white shadow-sm");
+        setHeaderClass("bg-background/90 backdrop-blur-md shadow-lg border-b border-gray-800");
+        setIsScrolled(true);
       } else {
         setHeaderClass("bg-transparent");
+        setIsScrolled(false);
       }
     };
 
@@ -45,20 +48,24 @@ const Header = ({ activeSection, scrollToSection }: HeaderProps) => {
 
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${headerClass}`}>
-      <div className="max-w-6xl mx-auto px-6 py-5">
+      <div className={`max-w-6xl mx-auto px-6 transition-all duration-300 ${
+        isScrolled ? "py-3" : "py-5"
+      }`}>
         <div className="flex justify-between items-center">
           <motion.a
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             href="#home"
-            className="text-3xl font-medium text-primary"
+            className={`text-3xl font-medium text-primary transition-all duration-300 ${
+              isScrolled ? "scale-90" : "scale-100"
+            }`}
             onClick={(e) => {
               e.preventDefault();
               handleNavClick("home");
             }}
           >
-            cp<span className="text-black">.</span>
+            cp<span className="text-foreground">.</span>
           </motion.a>
           
           {/* Mobile menu button */}
@@ -81,7 +88,9 @@ const Header = ({ activeSection, scrollToSection }: HeaderProps) => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="hidden md:flex space-x-8"
+            className={`hidden md:flex transition-all duration-300 ${
+              isScrolled ? "space-x-6" : "space-x-8"
+            }`}
           >
             {navItems.map((item) => (
               <a
@@ -105,8 +114,8 @@ const Header = ({ activeSection, scrollToSection }: HeaderProps) => {
         
         {/* Mobile Navigation */}
         <div 
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            mobileMenuOpen ? "max-h-64 mt-4" : "max-h-0 mt-0"
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out bg-background/95 backdrop-blur-sm rounded-lg ${
+            mobileMenuOpen ? "max-h-64 mt-4 p-2 border border-gray-800 shadow-lg" : "max-h-0 mt-0"
           }`}
         >
           <div className="flex flex-col items-start space-y-5 py-4">
