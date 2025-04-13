@@ -7,7 +7,7 @@ interface FooterProps {
 
 const Footer = ({ scrollToSection }: FooterProps) => {
   return (
-    <footer className="py-20 bg-[#f8f9fa] border-t border-gray-100">
+    <footer className="py-20 bg-background border-t border-gray-800">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           <motion.div 
@@ -92,7 +92,7 @@ const Footer = ({ scrollToSection }: FooterProps) => {
                 href={personalInfo.socialLinks.linkedin} 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors duration-300"
+                className="w-10 h-10 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors duration-300"
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -104,7 +104,7 @@ const Footer = ({ scrollToSection }: FooterProps) => {
                 href={personalInfo.socialLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors duration-300"
+                className="w-10 h-10 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors duration-300"
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -116,7 +116,7 @@ const Footer = ({ scrollToSection }: FooterProps) => {
                 href={personalInfo.socialLinks.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors duration-300"
+                className="w-10 h-10 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors duration-300"
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -128,7 +128,7 @@ const Footer = ({ scrollToSection }: FooterProps) => {
                 href={personalInfo.socialLinks.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors duration-300"
+                className="w-10 h-10 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors duration-300"
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >

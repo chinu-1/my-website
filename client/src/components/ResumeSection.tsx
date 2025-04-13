@@ -196,7 +196,7 @@ const ResumeSection = () => {
                         <span className="font-medium">{skill.name}</span>
                         <span className="text-muted-foreground text-sm">{skill.proficiency}%</span>
                       </div>
-                      <div className="w-full bg-gray-100 rounded-full h-1.5">
+                      <div className="w-full bg-gray-700 rounded-full h-1.5">
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: `${skill.proficiency}%` }}
@@ -218,7 +218,7 @@ const ResumeSection = () => {
                         <span className="font-medium">{skill.name}</span>
                         <span className="text-muted-foreground text-sm">{skill.proficiency}%</span>
                       </div>
-                      <div className="w-full bg-gray-100 rounded-full h-1.5">
+                      <div className="w-full bg-gray-700 rounded-full h-1.5">
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: `${skill.proficiency}%` }}
