@@ -6,11 +6,11 @@ interface HeroSectionProps {
 
 const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
   return (
-    <section id="home" className="min-h-screen pt-28 pb-20 md:pt-36 flex items-center relative overflow-hidden">
+    <section id="home" className="min-h-screen pt-28 pb-20 md:pt-36 flex items-center relative overflow-hidden bg-background">
       {/* Background decorative elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-[15%] left-[10%] w-64 h-64 rounded-full bg-primary/5 blur-3xl"></div>
-        <div className="absolute bottom-[20%] right-[5%] w-72 h-72 rounded-full bg-secondary/5 blur-3xl"></div>
+        <div className="absolute top-[15%] left-[10%] w-64 h-64 rounded-full bg-primary/10 blur-3xl"></div>
+        <div className="absolute bottom-[20%] right-[5%] w-72 h-72 rounded-full bg-secondary/10 blur-3xl"></div>
       </div>
       
       <div className="max-w-6xl mx-auto px-6 w-full">
@@ -91,16 +91,16 @@ const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
                 className="max-w-full h-auto"
               >
                 {/* Decorative elements - simplified illustration */}
-                <circle cx="200" cy="200" r="160" fill="#F4F7FA" />
+                <circle cx="200" cy="200" r="160" fill="#1E293B" />
                 <path 
                   d="M320 200C320 265.685 265.685 320 200 320C134.315 320 80 265.685 80 200C80 134.315 134.315 80 200 80C265.685 80 320 134.315 320 200Z" 
-                  stroke="#0EA5E9" 
+                  stroke="#38BDF8" 
                   strokeWidth="2" 
                   strokeDasharray="4 4"
                 />
                 <motion.path 
                   d="M290 200C290 249.706 249.706 290 200 290C150.294 290 110 249.706 110 200C110 150.294 150.294 110 200 110C249.706 110 290 150.294 290 200Z" 
-                  stroke="#16A34A" 
+                  stroke="#2DD4BF" 
                   strokeWidth="2"
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: 1 }}
@@ -111,11 +111,11 @@ const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 4, repeat: Infinity, repeatType: "loop" }}
                 >
-                  <rect x="165" y="160" width="70" height="90" rx="4" fill="white" stroke="#374151" strokeWidth="2"/>
-                  <rect x="175" y="175" width="50" height="6" rx="1" fill="#10B981"/>
-                  <rect x="175" y="190" width="35" height="6" rx="1" fill="#64748B"/>
-                  <rect x="175" y="205" width="40" height="6" rx="1" fill="#64748B"/>
-                  <rect x="175" y="220" width="25" height="6" rx="1" fill="#64748B"/>
+                  <rect x="165" y="160" width="70" height="90" rx="4" fill="#1F2937" stroke="#4B5563" strokeWidth="2"/>
+                  <rect x="175" y="175" width="50" height="6" rx="1" fill="#34D399"/>
+                  <rect x="175" y="190" width="35" height="6" rx="1" fill="#94A3B8"/>
+                  <rect x="175" y="205" width="40" height="6" rx="1" fill="#94A3B8"/>
+                  <rect x="175" y="220" width="25" height="6" rx="1" fill="#94A3B8"/>
                 </motion.g>
                 <motion.circle 
                   cx="250" 
@@ -130,7 +130,7 @@ const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
                   cx="140" 
                   cy="230" 
                   r="8" 
-                  fill="#0EA5E9"
+                  fill="#38BDF8"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.7, duration: 0.5, type: "spring" }}

@@ -71,11 +71,11 @@ const ResumeSection = () => {
   ];
 
   return (
-    <section id="resume" ref={ref} className="py-20 md:py-32 bg-[#f8f9fa] relative overflow-hidden">
+    <section id="resume" ref={ref} className="py-20 md:py-32 bg-background relative overflow-hidden">
       {/* Decorative background */}
       <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden">
-        <div className="absolute right-0 bottom-0 w-72 h-72 bg-primary/5 rounded-full translate-x-1/2 translate-y-1/2"></div>
-        <div className="absolute left-0 top-0 w-80 h-80 bg-secondary/5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute right-0 bottom-0 w-72 h-72 bg-primary/10 rounded-full translate-x-1/2 translate-y-1/2"></div>
+        <div className="absolute left-0 top-0 w-80 h-80 bg-secondary/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
       </div>
       
       <div className="max-w-6xl mx-auto px-6">

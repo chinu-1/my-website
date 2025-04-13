@@ -38,11 +38,11 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" ref={ref} className="py-20 md:py-32 bg-white relative overflow-hidden">
+    <section id="about" ref={ref} className="py-20 md:py-32 bg-background relative overflow-hidden">
       {/* Decorative background */}
       <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden">
-        <div className="absolute left-0 bottom-0 w-72 h-72 bg-primary/5 rounded-full -translate-x-1/2 translate-y-1/2"></div>
-        <div className="absolute right-0 top-0 w-80 h-80 bg-secondary/5 rounded-full translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute left-0 bottom-0 w-72 h-72 bg-primary/10 rounded-full -translate-x-1/2 translate-y-1/2"></div>
+        <div className="absolute right-0 top-0 w-80 h-80 bg-secondary/10 rounded-full translate-x-1/2 -translate-y-1/2"></div>
       </div>
       
       <div className="max-w-6xl mx-auto px-6">
@@ -66,7 +66,7 @@ const AboutSection = () => {
           >
             <motion.div
               variants={itemVariants}
-              className="prose prose-lg max-w-none"
+              className="prose prose-lg max-w-none prose-invert prose-headings:text-foreground prose-p:text-muted-foreground"
             >
               <h3 className="font-medium text-2xl mb-6">My Story</h3>
               <p>
@@ -92,7 +92,7 @@ const AboutSection = () => {
               <h3 className="font-medium text-2xl mb-6">Personal Info</h3>
               
               <div className="grid gap-4">
-                <div className="flex items-center border-b border-gray-100 pb-4">
+                <div className="flex items-center border-b border-gray-700 pb-4">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -103,12 +103,12 @@ const AboutSection = () => {
                     </svg>
                   </div>
                   <div>
-                    <span className="text-sm text-gray-500 block">Full Name</span>
-                    <span className="font-medium">Chinmoya Padhi</span>
+                    <span className="text-sm text-gray-400 block">Full Name</span>
+                    <span className="font-medium text-foreground">Chinmoya Padhi</span>
                   </div>
                 </div>
                 
-                <div className="flex items-center border-b border-gray-100 pb-4">
+                <div className="flex items-center border-b border-gray-700 pb-4">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -116,12 +116,12 @@ const AboutSection = () => {
                     </svg>
                   </div>
                   <div>
-                    <span className="text-sm text-gray-500 block">Email</span>
-                    <span className="font-medium">chinmoyapadhi01@outlook.com</span>
+                    <span className="text-sm text-gray-400 block">Email</span>
+                    <span className="font-medium text-foreground">chinmoyapadhi01@outlook.com</span>
                   </div>
                 </div>
                 
-                <div className="flex items-center border-b border-gray-100 pb-4">
+                <div className="flex items-center border-b border-gray-700 pb-4">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -129,12 +129,12 @@ const AboutSection = () => {
                     </svg>
                   </div>
                   <div>
-                    <span className="text-sm text-gray-500 block">Location</span>
-                    <span className="font-medium">Bhubaneswar, India</span>
+                    <span className="text-sm text-gray-400 block">Location</span>
+                    <span className="font-medium text-foreground">Bhubaneswar, India</span>
                   </div>
                 </div>
                 
-                <div className="flex items-center pb-4">
+                <div className="flex items-center border-b border-gray-700 pb-4">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -145,8 +145,8 @@ const AboutSection = () => {
                     </svg>
                   </div>
                   <div>
-                    <span className="text-sm text-gray-500 block">Degree</span>
-                    <span className="font-medium">B.Tech in Electronics and Communication Engineering</span>
+                    <span className="text-sm text-gray-400 block">Degree</span>
+                    <span className="font-medium text-foreground">B.Tech in Electronics and Communication Engineering</span>
                   </div>
                 </div>
               </div>
