@@ -3,13 +3,13 @@ export const educationData = [
   {
     degree: "B.Tech in Electronics and Communication Engineering",
     institution: "Mizoram University",
-    period: "2021 - 2025",
+    period: "2023 - Present (Graduation: 2027)",
     description: "Pursuing a comprehensive program in Electronics and Communication Engineering with focus on signal processing, communication systems, and electronic circuit design. Maintaining a strong academic record throughout the program."
   },
   {
     degree: "Higher Secondary Education",
     institution: "CBSE Board",
-    period: "2019 - 2021",
+    period: "2020 - 2022",
     description: "Completed higher secondary education with specialization in Science and Mathematics. Graduated with distinction and developed a strong foundation in physics, mathematics, and basic electronics."
   }
 ];
